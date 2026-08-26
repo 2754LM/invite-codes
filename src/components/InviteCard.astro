@@ -3,7 +3,8 @@ export interface Props {
   id: string;
   name: string;
   logo: string;
-  logoColor: string;
+  logoType?: 'image' | 'letter';
+  logoBg?: string;
   description: string;
   code: string;
   codeLabel: string;
@@ -13,14 +14,25 @@ export interface Props {
   featured?: boolean;
 }
 
-const { id, name, logo, logoColor, description, code, codeLabel, url, category, perks = [], featured = false } = Astro.props;
+const { id, name, logo, logoType = 'letter', logoBg, description, code, codeLabel, url, category, perks = [], featured = false } = Astro.props;
 
-const btnClass = featured ? 'btn btn-featured' : (category === 'airport' ? 'btn btn-primary' : 'btn btn-primary');
+const btnClass = category === 'airport'
+  ? 'btn btn-primary'
+  : (featured ? 'btn btn-featured' : 'btn btn-primary');
+
+const logoStyle = logoType === 'image'
+  ? `background: ${logoBg ?? 'transparent'};`
+  : `background: linear-gradient(135deg, #7c5cff, #22d3ee);`;
 ---
 <article class={`card ${category === 'ai' ? 'ai' : ''} ${featured ? 'featured' : ''}`}>
   {featured && <span class="tag">🔥 热门</span>}
   <div class="card-head">
-    <div class="logo" style={`background: ${logoColor}`}>{logo}</div>
+    <div class="logo" style={logoStyle}>
+      {logoType === 'image'
+        ? <img src={logo} alt={`${name} logo`} width="44" height="44" loading="lazy" />
+        : logo
+      }
+    </div>
     <div>
       <div class="card-name">{name}</div>
       <div class="card-desc">{description}</div>
@@ -39,6 +51,6 @@ const btnClass = featured ? 'btn btn-featured' : (category === 'airport' ? 'btn 
     <button class="copy-btn" data-copy={`code-${id}`} aria-label={`复制 ${name} ${codeLabel}`}>复制</button>
   </div>
   <div class="actions">
-    <a class={btnClass} href={url} target="_blank" rel="noopener">使用{codeLabel}{category === 'ai' ? (featured ? '订阅' : '注册') : '注册'} →</a>
+    <a class={btnClass} href={url} target="_blank" rel="noopener">使用{codeLabel}{category === 'ai' && !featured ? '注册' : (featured ? '订阅' : '注册')} →</a>
   </div>
 </article>
