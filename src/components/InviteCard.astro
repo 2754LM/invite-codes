@@ -23,13 +23,25 @@ const btnClass = category === 'airport'
 const logoStyle = logoType === 'image'
   ? `background: ${logoBg ?? 'transparent'};`
   : `background: linear-gradient(135deg, #7c5cff, #22d3ee);`;
+
+// logo path -> resolved src (handled at build time by Vite)
+import youtuniceLogo from '../../public/logos/youtunice.png?url';
+import minimaxLogo from '../../public/logos/minimax.png?url';
+import opencodeLogo from '../../public/logos/opencode.png?url';
+
+const logoMap: Record<string, string> = {
+  youtunice: youtuniceLogo,
+  minimax: minimaxLogo,
+  opencode: opencodeLogo,
+};
+const logoSrc = logoMap[id];
 ---
 <article class={`card ${category === 'ai' ? 'ai' : ''} ${featured ? 'featured' : ''}`}>
   {featured && <span class="tag">🔥 热门</span>}
   <div class="card-head">
     <div class="logo" style={logoStyle}>
-      {logoType === 'image'
-        ? <img src={logo} alt={`${name} logo`} width="44" height="44" loading="lazy" />
+      {logoType === 'image' && logoSrc
+        ? <img src={logoSrc} alt={`${name} logo`} width="48" height="48" loading="lazy" />
         : logo
       }
     </div>
