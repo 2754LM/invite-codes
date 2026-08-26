@@ -1,15 +1,15 @@
 :root {
-  --bg: #0b0d12;
-  --bg-soft: #11141c;
-  --card: #161a24;
-  --border: #232838;
-  --text: #e6e8ee;
-  --muted: #8a90a0;
-  --accent: #7c5cff;
-  --accent-2: #22d3ee;
-  --accent-ai: #f472b6;
+  --bg: #ffffff;
+  --bg-soft: #f7f8fa;
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --text: #111827;
+  --muted: #6b7280;
+  --accent: #6366f1;
+  --accent-2: #06b6d4;
+  --accent-ai: #ec4899;
   --radius: 14px;
-  --shadow: 0 10px 30px rgba(0,0,0,.35);
+  --shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.06);
 }
 
 * { box-sizing: border-box; }
@@ -18,8 +18,8 @@ html, body { margin: 0; padding: 0; }
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background:
-    radial-gradient(1200px 600px at 10% -10%, rgba(124,92,255,.18), transparent 60%),
-    radial-gradient(900px 500px at 100% 0%, rgba(34,211,238,.12), transparent 60%),
+    radial-gradient(900px 500px at 10% -10%, rgba(99,102,241,.10), transparent 60%),
+    radial-gradient(700px 400px at 100% 0%, rgba(6,182,212,.08), transparent 60%),
     var(--bg);
   color: var(--text);
   min-height: 100vh;
@@ -42,18 +42,18 @@ header.hero {
   align-items: center;
   gap: 8px;
   padding: 6px 12px;
-  background: rgba(124,92,255,.12);
-  border: 1px solid rgba(124,92,255,.3);
+  background: rgba(99,102,241,.08);
+  border: 1px solid rgba(99,102,241,.25);
   border-radius: 999px;
   font-size: 12px;
-  color: #b9a9ff;
+  color: #6366f1;
   letter-spacing: .04em;
   margin-bottom: 18px;
 }
 .badge .dot {
   width: 6px; height: 6px; border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 10px var(--accent);
+  box-shadow: 0 0 8px var(--accent);
 }
 
 h1 {
@@ -62,6 +62,7 @@ h1 {
   margin: 0 0 14px;
   font-weight: 700;
   letter-spacing: -0.02em;
+  color: var(--text);
 }
 h1 .grad {
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
@@ -83,6 +84,7 @@ h1 .grad {
   font-size: 22px;
   font-weight: 600;
   margin: 48px 0 20px;
+  color: var(--text);
 }
 .section-title .icon {
   width: 36px; height: 36px;
@@ -90,8 +92,8 @@ h1 .grad {
   border-radius: 10px;
   font-size: 18px;
 }
-.section-title.airport .icon { background: rgba(124,92,255,.15); color: var(--accent); }
-.section-title.ai .icon { background: rgba(244,114,182,.15); color: var(--accent-ai); }
+.section-title.airport .icon { background: rgba(99,102,241,.10); color: var(--accent); }
+.section-title.ai .icon { background: rgba(236,72,153,.10); color: var(--accent-ai); }
 .section-title .count {
   margin-left: auto;
   font-size: 12px;
@@ -110,12 +112,12 @@ h1 .grad {
 }
 
 .card {
-  background: linear-gradient(180deg, rgba(255,255,255,.02), transparent), var(--card);
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 22px;
   box-shadow: var(--shadow);
-  transition: transform .2s ease, border-color .2s ease;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -123,11 +125,12 @@ h1 .grad {
 }
 .card:hover {
   transform: translateY(-2px);
-  border-color: rgba(124,92,255,.45);
+  border-color: rgba(99,102,241,.45);
+  box-shadow: 0 4px 4px rgba(0,0,0,.04), 0 12px 32px rgba(99,102,241,.12);
 }
-.card.ai:hover { border-color: rgba(244,114,182,.45); }
-.card.featured { border-color: rgba(255,106,0,.4); }
-.card.featured:hover { border-color: rgba(255,106,0,.7); }
+.card.ai:hover { border-color: rgba(236,72,153,.45); }
+.card.featured { border-color: rgba(249,115,22,.35); }
+.card.featured:hover { border-color: rgba(249,115,22,.6); }
 
 .tag {
   position: absolute;
@@ -136,9 +139,9 @@ h1 .grad {
   font-size: 11px;
   padding: 3px 8px;
   border-radius: 999px;
-  background: rgba(255,106,0,.15);
-  color: #ffb070;
-  border: 1px solid rgba(255,106,0,.3);
+  background: rgba(249,115,22,.10);
+  color: #ea580c;
+  border: 1px solid rgba(249,115,22,.25);
   font-weight: 500;
 }
 
@@ -164,7 +167,7 @@ h1 .grad {
   object-fit: contain;
   display: block;
 }
-.card-name { font-size: 17px; font-weight: 600; }
+.card-name { font-size: 17px; font-weight: 600; color: var(--text); }
 .card-desc {
   font-size: 13px;
   color: var(--muted);
@@ -224,8 +227,8 @@ h1 .grad {
   transition: all .15s ease;
   white-space: nowrap;
 }
-.copy-btn:hover { color: var(--text); border-color: var(--accent); }
-.copy-btn.copied { color: #34d399; border-color: #34d399; }
+.copy-btn:hover { color: var(--text); border-color: var(--accent); background: rgba(99,102,241,.06); }
+.copy-btn.copied { color: #059669; border-color: #10b981; background: rgba(16,185,129,.08); }
 
 .actions {
   display: flex;
@@ -248,19 +251,19 @@ h1 .grad {
   color: var(--text);
   background: var(--bg-soft);
 }
-.btn:hover { border-color: var(--accent); color: var(--text); }
+.btn:hover { border-color: var(--accent); color: var(--accent); }
 .btn-primary {
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   border-color: transparent;
   color: #fff;
 }
-.btn-primary:hover { filter: brightness(1.08); }
+.btn-primary:hover { filter: brightness(1.05); color: #fff; }
 .btn-featured {
-  background: linear-gradient(135deg, #ff6a00, #ff9a3c);
+  background: linear-gradient(135deg, #f97316, #fb923c);
   border-color: transparent;
   color: #fff;
 }
-.btn-featured:hover { filter: brightness(1.08); }
+.btn-featured:hover { filter: brightness(1.05); color: #fff; }
 
 .empty {
   border: 1px dashed var(--border);
@@ -283,7 +286,7 @@ footer a {
   text-decoration: none;
   border-bottom: 1px dashed var(--border);
 }
-footer a:hover { color: var(--text); }
+footer a:hover { color: var(--accent); border-color: var(--accent); }
 
 @media (max-width: 600px) {
   h1 { font-size: 32px; }
