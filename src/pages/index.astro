@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import InviteCard from '../components/InviteCard.astro';
+import invites from '../data/invites.json';
+
+const airports = invites.filter((i) => i.category === 'airport');
+const ais = invites.filter((i) => i.category === 'ai');
+
+const allKeywords = invites.map((i) => i.keywords).join(', ');
+const description = '精选机场与 AI 平台的邀请码、优惠码、注册返利链接：MiniMax Token Plan、OpenCode Go、悠兔等，一键复制即用。';
+---
+
+<BaseLayout
+  title="邀请码 / 优惠码 汇总 · 机场 & AI 平台"
+  description={description}
+  keywords={`邀请码, 优惠码, 注册码, 激活码, promo code, referral code, invite code, coupon, discount, ${allKeywords}`}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Invite Codes Hub",
+      "url": "https://2754lm.github.io/invite-codes/",
+      "description": description,
+      "inLanguage": "zh-CN",
+      "author": { "@type": "Person", "name": "2754LM" }
+    })} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "邀请码与优惠码",
+      "itemListElement": invites.map((i, idx) => ({
+        "@type": "ListItem",
+        "position": idx + 1,
+        "name": i.name,
+        "url": i.url
+      }))
+    })} />
+  </Fragment>
+
+  <div class="container">
+    <header class="hero">
+      <span class="badge"><span class="dot"></span>Invite Codes Hub</span>
+      <h1>各大平台 <span class="grad">邀请码 / 优惠码</span> 汇总</h1>
+      <p class="subtitle">精选机场与 AI 服务的邀请码与注册链接，点击卡片即可直接跳转注册或领取折扣。</p>
+    </header>
+
+    {airports.length > 0 && (
+      <>
+        <h2 class="section-title airport">
+          <span class="icon">✈️</span> 机场
+          <span class="count">{airports.length} 个</span>
+        </h2>
+        <section class="grid" aria-label="机场邀请码">
+          {airports.map((i) => <InviteCard {...i} />)}
+        </section>
+      </>
+    )}
+
+    {ais.length > 0 && (
+      <>
+        <h2 class="section-title ai">
+          <span class="icon">🤖</span> AI
+          <span class="count">{ais.length} 个</span>
+        </h2>
+        <section class="grid" aria-label="AI 平台邀请码与优惠码">
+          {ais.map((i) => <InviteCard {...i} />)}
+        </section>
+      </>
+    )}
+
+    <footer>
+      <p>由 <a href="https://github.com/2754LM/invite-codes" target="_blank" rel="noopener">2754LM/invite-codes</a> 维护 · Astro 静态站 · GitHub Pages 部署</p>
+    </footer>
+  </div>
+
+  <script>
+    document.querySelectorAll('.copy-btn').forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        const id = btn.getAttribute('data-copy');
+        const text = document.getElementById(id)?.textContent?.trim();
+        if (!text) return;
+        try { await navigator.clipboard.writeText(text); }
+        catch {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          ta.remove();
+        }
+        const orig = btn.textContent;
+        btn.textContent = '已复制';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1400);
+      });
+    });
+  </script>
+</BaseLayout>
