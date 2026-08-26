@@ -3,10 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>邀请码汇总 · 机场 & AI</title>
+  <title>邀请码汇总 · 机场 & AI 平台优惠码 | Invite Codes Hub</title>
+  <meta name="description" content="精选机场与 AI 平台的邀请码与优惠码：MiniMax Token Plan、OpenCode Go、悠兔等。复制即用，注册即享折扣与返利。" />
+  <meta name="keywords" content="邀请码,优惠码,MiniMax,Token Plan,OpenCode Go,悠兔,机场,AI,折扣,返利,referral,invite code" />
+  <meta name="author" content="2754LM" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0b0d12" />
+  <link rel="canonical" href="https://2754lm.github.io/invite-codes/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="邀请码汇总 · 机场 & AI 平台优惠码" />
+  <meta property="og:description" content="精选机场与 AI 平台的邀请码与优惠码，一键复制即用。" />
+  <meta property="og:url" content="https://2754lm.github.io/invite-codes/" />
+  <meta property="og:site_name" content="Invite Codes Hub" />
+  <meta property="og:locale" content="zh_CN" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="邀请码汇总 · 机场 & AI 平台优惠码" />
+  <meta name="twitter:description" content="精选机场与 AI 平台的邀请码与优惠码，一键复制即用。" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%81%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Invite Codes Hub",
+    "url": "https://2754lm.github.io/invite-codes/",
+    "description": "精选机场与 AI 平台的邀请码与优惠码汇总。",
+    "inLanguage": "zh-CN",
+    "author": { "@type": "Person", "name": "2754LM" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "邀请码与优惠码",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "悠兔机场", "url": "https://youtunice.com/?path=register&code=NfZAyfPo" },
+      { "@type": "ListItem", "position": 2, "name": "MiniMax Token Plan", "url": "https://platform.minimaxi.com/subscribe/token-plan?code=BQJKUrGjrA&source=link" },
+      { "@type": "ListItem", "position": 3, "name": "OpenCode Go", "url": "https://opencode.ai/go?ref=GPM869V1MB" }
+    ]
+  }
+  </script>
+
   <style>
     :root {
       --bg: #0b0d12;
@@ -18,6 +65,7 @@
       --accent: #7c5cff;
       --accent-2: #22d3ee;
       --accent-ai: #f472b6;
+      --accent-minimax: #ff6a00;
       --radius: 14px;
       --shadow: 0 10px 30px rgba(0,0,0,.35);
     }
@@ -76,9 +124,10 @@
     .subtitle {
       color: var(--muted);
       font-size: 16px;
-      max-width: 560px;
+      max-width: 600px;
       margin: 0 auto;
     }
+
     .section-title {
       display: flex;
       align-items: center;
@@ -121,12 +170,27 @@
       display: flex;
       flex-direction: column;
       gap: 16px;
+      position: relative;
     }
     .card:hover {
       transform: translateY(-2px);
       border-color: rgba(124,92,255,.45);
     }
     .card.ai-card:hover { border-color: rgba(244,114,182,.45); }
+    .card.minimax-card:hover { border-color: rgba(255,106,0,.55); }
+
+    .tag {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(255,106,0,.15);
+      color: #ffb070;
+      border: 1px solid rgba(255,106,0,.3);
+      font-weight: 500;
+    }
     .card-head {
       display: flex;
       align-items: center;
@@ -143,6 +207,8 @@
       flex-shrink: 0;
     }
     .card.ai-card .logo { background: linear-gradient(135deg, var(--accent-ai), #fb923c); }
+    .card.minimax-card .logo { background: linear-gradient(135deg, #ff6a00, #ff9a3c); }
+    .card.opencode-card .logo { background: linear-gradient(135deg, #22d3ee, #7c5cff); }
     .card-name {
       font-size: 17px;
       font-weight: 600;
@@ -151,6 +217,23 @@
       font-size: 13px;
       color: var(--muted);
       margin-top: 2px;
+      line-height: 1.5;
+    }
+    .perks {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .perks li {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      color: var(--muted);
     }
     .row {
       display: flex;
@@ -184,6 +267,7 @@
       border-radius: 8px;
       cursor: pointer;
       transition: all .15s ease;
+      white-space: nowrap;
     }
     .copy-btn:hover { color: var(--text); border-color: var(--accent); }
     .copy-btn.copied { color: #34d399; border-color: #34d399; }
@@ -215,6 +299,13 @@
       color: #fff;
     }
     .btn-primary:hover { filter: brightness(1.08); }
+    .btn-minimax {
+      background: linear-gradient(135deg, #ff6a00, #ff9a3c);
+      border-color: transparent;
+      color: #fff;
+    }
+    .btn-minimax:hover { filter: brightness(1.08); }
+
     .empty {
       border: 1px dashed var(--border);
       border-radius: var(--radius);
@@ -223,6 +314,7 @@
       color: var(--muted);
       font-size: 14px;
     }
+
     footer {
       margin-top: 80px;
       text-align: center;
@@ -231,6 +323,7 @@
     }
     footer a { color: var(--muted); text-decoration: none; border-bottom: 1px dashed var(--border); }
     footer a:hover { color: var(--text); }
+
     @media (max-width: 600px) {
       h1 { font-size: 32px; }
       .container { padding: 40px 18px 64px; }
@@ -241,19 +334,20 @@
   <div class="container">
     <header>
       <span class="badge"><span class="dot"></span>Invite Codes Hub</span>
-      <h1>各大平台 <span class="grad">邀请码</span> 汇总</h1>
-      <p class="subtitle">精选机场与 AI 服务的邀请码与注册链接，点击卡片即可直接跳转注册。</p>
+      <h1>各大平台 <span class="grad">邀请码 / 优惠码</span> 汇总</h1>
+      <p class="subtitle">精选机场与 AI 服务的邀请码与注册链接，点击卡片即可直接跳转注册或领取折扣。</p>
     </header>
 
-    <div class="section-title airport">
+    <!-- 🛫 机场 -->
+    <h2 class="section-title airport">
       <span class="icon">✈️</span> 机场
       <span class="count">1 个</span>
-    </div>
-    <div class="grid">
+    </h2>
+    <section class="grid" aria-label="机场邀请码">
 
-      <div class="card">
+      <article class="card">
         <div class="card-head">
-          <div class="logo">悠</div>
+          <div class="logo" aria-hidden="true">悠</div>
           <div>
             <div class="card-name">悠兔</div>
             <div class="card-desc">高速稳定的节点机场</div>
@@ -262,24 +356,79 @@
         <div class="row">
           <div>
             <div class="label">邀请码</div>
-            <div class="value" id="code-0">NfZAyfPo</div>
+            <div class="value" id="code-airport-0">NfZAyfPo</div>
           </div>
-          <button class="copy-btn" data-copy="code-0">复制</button>
+          <button class="copy-btn" data-copy="code-airport-0" aria-label="复制悠兔邀请码">复制</button>
         </div>
         <div class="actions">
           <a class="btn btn-primary" href="https://youtunice.com/?path=register&code=NfZAyfPo" target="_blank" rel="noopener">使用邀请码注册 →</a>
         </div>
-      </div>
+      </article>
 
-    </div>
+    </section>
 
-    <div class="section-title ai">
+    <!-- 🤖 AI -->
+    <h2 class="section-title ai">
       <span class="icon">🤖</span> AI
-      <span class="count">0 个</span>
-    </div>
-    <div class="grid">
-      <div class="empty">暂无收录，欢迎补充 ✨</div>
-    </div>
+      <span class="count">2 个</span>
+    </h2>
+    <section class="grid" aria-label="AI 平台邀请码与优惠码">
+
+      <!-- MiniMax Token Plan -->
+      <article class="card ai-card minimax-card">
+        <span class="tag">🔥 热门</span>
+        <div class="card-head">
+          <div class="logo" aria-hidden="true">M</div>
+          <div>
+            <div class="card-name">MiniMax Token Plan</div>
+            <div class="card-desc">订阅一份套餐，解锁最新模型：前沿 Coding 能力、1M 超长上下文、原生多模态（图文音视频共用额度）</div>
+          </div>
+        </div>
+        <ul class="perks" aria-label="MiniMax 福利">
+          <li>好友 9 折</li>
+          <li>Builder 权益</li>
+          <li>邀请人 10% 返利</li>
+          <li>社区特权</li>
+        </ul>
+        <div class="row">
+          <div>
+            <div class="label">优惠码</div>
+            <div class="value" id="code-ai-0">BQJKUrGjrA</div>
+          </div>
+          <button class="copy-btn" data-copy="code-ai-0" aria-label="复制 MiniMax 优惠码">复制</button>
+        </div>
+        <div class="actions">
+          <a class="btn btn-minimax" href="https://platform.minimaxi.com/subscribe/token-plan?code=BQJKUrGjrA&source=link" target="_blank" rel="noopener">立即订阅 →</a>
+        </div>
+      </article>
+
+      <!-- OpenCode Go -->
+      <article class="card ai-card opencode-card">
+        <div class="card-head">
+          <div class="logo" aria-hidden="true">O</div>
+          <div>
+            <div class="card-name">OpenCode Go</div>
+            <div class="card-desc">开源 AI 编程助手 / 终端 Agent，按需使用多种大模型，写代码、读代码、改代码一气呵成。</div>
+          </div>
+        </div>
+        <ul class="perks" aria-label="OpenCode Go 福利">
+          <li>多模型支持</li>
+          <li>终端 / IDE 集成</li>
+          <li>邀请返利</li>
+        </ul>
+        <div class="row">
+          <div>
+            <div class="label">邀请码</div>
+            <div class="value" id="code-ai-1">GPM869V1MB</div>
+          </div>
+          <button class="copy-btn" data-copy="code-ai-1" aria-label="复制 OpenCode Go 邀请码">复制</button>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://opencode.ai/go?ref=GPM869V1MB" target="_blank" rel="noopener">前往注册 →</a>
+        </div>
+      </article>
+
+    </section>
 
     <footer>
       <p>由 <a href="https://github.com/2754LM/invite-codes" target="_blank" rel="noopener">2754LM/invite-codes</a> 维护 · 使用 GitHub Pages 部署</p>
