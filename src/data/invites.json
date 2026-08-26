@@ -1,0 +1,47 @@
+[
+  {
+    "id": "youtunice",
+    "category": "airport",
+    "name": "悠兔",
+    "nameEn": "YoutuNice",
+    "logo": "悠",
+    "logoColor": "linear-gradient(135deg, #7c5cff, #22d3ee)",
+    "description": "高速稳定的节点机场，注册即享专属流量与折扣。",
+    "code": "NfZAyfPo",
+    "codeLabel": "邀请码",
+    "url": "https://youtunice.com/?path=register&code=NfZAyfPo",
+    "perks": [],
+    "keywords": "悠兔邀请码, 悠兔优惠码, YoutuNice 邀请码, YoutuNice 优惠码, 机场推荐, 节点订阅, 科学上网邀请码, 梯子推荐, VPN 注册优惠",
+    "featured": false
+  },
+  {
+    "id": "minimax",
+    "category": "ai",
+    "name": "MiniMax Token Plan",
+    "nameEn": "MiniMax",
+    "logo": "M",
+    "logoColor": "linear-gradient(135deg, #ff6a00, #ff9a3c)",
+    "description": "订阅一份套餐，解锁最新模型：前沿 Coding 能力、1M 超长上下文、原生多模态（图文音视频共用额度）。",
+    "code": "BQJKUrGjrA",
+    "codeLabel": "优惠码",
+    "url": "https://platform.minimaxi.com/subscribe/token-plan?code=BQJKUrGjrA&source=link",
+    "perks": ["好友 9 折", "Builder 权益", "邀请人 10% 返利", "社区特权"],
+    "keywords": "MiniMax 优惠码, MiniMax 邀请码, MiniMax 折扣, Token Plan 优惠, MiniMax Coding, 长上下文, 多模态 AI, AI 返利, MiniMax Builder",
+    "featured": true
+  },
+  {
+    "id": "opencode",
+    "category": "ai",
+    "name": "OpenCode Go",
+    "nameEn": "OpenCode",
+    "logo": "O",
+    "logoColor": "linear-gradient(135deg, #22d3ee, #7c5cff)",
+    "description": "OpenCode 旗下多种 AI 模型的订阅套餐服务，按需选择前沿模型，统一计费。",
+    "code": "GPM869V1MB",
+    "codeLabel": "邀请码",
+    "url": "https://opencode.ai/go?ref=GPM869V1MB",
+    "perks": ["多种前沿大模型", "统一订阅计费", "邀请返利"],
+    "keywords": "OpenCode 邀请码, OpenCode 优惠码, OpenCode Go 订阅, AI 模型订阅, 多模型套餐, 大模型套餐, AI 订阅优惠, LLM 订阅, 模型市场",
+    "featured": false
+  }
+]
